@@ -1,0 +1,81 @@
+﻿@model IEnumerable<MyScore_ASP.Models.Product>
+@{
+    ViewBag.Title = "Алкогольная продукция";
+}
+<div class="col-md-12 myborder">
+    <div class="col-md-3">
+        <div>
+            <img style="max-width:100%;max-height:100%;" src="~/Content/Files/alkogol.jpg" />
+        </div>
+        <br />
+        <div style="margin-left:20%">
+
+            <a class="mystyle btn btn-default" href="/Home/Milk"> Молочная продуция</a>
+            <br />
+            <br />
+            <a class=" mystyle btn btn-default" href="/Home/BabyFood">Детское питание</a>
+            <br />
+            <br />
+
+            <a class=" mystyle btn btn-default" href="/Home/Sausages">Колбасы</a>
+            <br />
+            <br />
+            <a class=" mystyle btn btn-default" href="/Home/Confectionery">Кондитерские изделия</a>
+            <br />
+            <br />
+            <a class=" mystyle btn btn-default" href="/Home/Bread">Хлеб</a>
+            <br />
+            <br />
+            <a class=" mystyle btn btn-default" href="/Home/AnimalFeed">Корм для животных</a>
+            <br />
+            <br />
+            <a class=" mystyle btn btn-default" href="/Home/Grocery">Бакалея</a>
+            <br />
+            <br />
+            <a class=" mystyle btn btn-default" href="/Home/Beverages">Напитки</a>
+            <br />
+            <br />
+
+        </div>
+        <div>
+
+            <br>
+            <p>
+                Оформление заказов пн-вс, 9:00 - 18:00<br>
+
+                Доставка заказов пн-вс, 10:00 - 21:00<br>
+                <br>
+                тел. +38 068 225 93 75<br>
+
+                (Отдел заказов)<br>
+                <a href="@ViewBag.Link" target="_blank">Подробнее</a>
+            </p>
+        </div>
+
+    </div>
+  
+    <div>
+
+        <h3 style="color:maroon">@ViewBag.Title</h3>
+
+        @foreach (var item in Model)
+        {
+            <div>
+                @if (item.IdCategory == 9)
+                {
+                <div class="col-md-3 myborder">
+                    <img width="100" height="230" src="/@item.Photo" />
+                    <p></p>
+                    <p>Название :@item.NameProduct</p>
+                    <p> Цена :@item.Price</p>
+                    <p>Торговая марка :@item.Table_Matufactur.NameManufacturer</p>
+                </div>
+
+                }
+            </div>
+
+        }
+    </div>
+  
+</div>
+

@@ -1,0 +1,62 @@
+﻿@model MyScore_ASP.Models.Product
+
+@{
+    ViewBag.Title = "Подробно о товаре";
+}
+
+<h3 style="color:maroon">@ViewBag.Title</h3>
+<div>
+   
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @*@Html.DisplayNameFor(model => model.Category.NameCategory)*@
+                Название категории
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Category.NameCategory)
+            </dd>
+
+            <dt>
+                @*@Html.DisplayNameFor(model => model.Table_Matufactur.NameManufacturer)*@
+                Торговая марка
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Table_Matufactur.NameManufacturer)
+            </dd>
+
+            <dt>
+                @*@Html.DisplayNameFor(model => model.NameProduct)*@
+                Название товара
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NameProduct)
+            </dd>
+
+            <dt>
+                @*@Html.DisplayNameFor(model => model.Price)*@
+                Цена
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+
+            <dt>
+                @*@Html.DisplayNameFor(model => model.Photo)*@
+                Фотография
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Photo)
+            </dd>
+
+        </dl>
+</div>
+<p>
+    @Html.ActionLink("Редактировать", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Вернуться к списку товаров", "Index")
+</p>

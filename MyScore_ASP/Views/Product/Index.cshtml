@@ -1,0 +1,62 @@
+﻿@model IEnumerable<MyScore_ASP.Models.Product>
+
+@{
+    ViewBag.Title = "Все товары";
+}
+
+<h3 style="color:maroon">@ViewBag.Title</h3>
+<p>
+    @Html.ActionLink("Добавить новый товар", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Category.NameCategory)*@
+            Категория
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Table_Matufactur.NameManufacturer)*@
+            Торговая марка
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.NameProduct)*@
+            Название товара
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Price)*@
+            Цена
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Photo)*@
+            Фотография
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.NameCategory)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Table_Matufactur.NameManufacturer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameProduct)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Photo)
+            </td>
+            <td>
+                @Html.ActionLink("Редактировать", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Подробно", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Удалить", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
